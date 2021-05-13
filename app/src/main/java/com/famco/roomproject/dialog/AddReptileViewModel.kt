@@ -1,4 +1,4 @@
-package com.famco.roomproject
+package com.famco.roomproject.dialog
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

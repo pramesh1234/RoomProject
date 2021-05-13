@@ -11,7 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.famco.roomproject.AddReptileFragment
+import com.famco.roomproject.dialog.AddReptileFragment
 import com.famco.roomproject.R
 import com.famco.roomproject.adapters.AnimalAdapter
 import com.famco.roomproject.adapters.IAnimalClickAdapter

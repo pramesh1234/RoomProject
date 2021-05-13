@@ -11,7 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.famco.roomproject.AddAmphibianFragment
+import com.famco.roomproject.dialog.AddAmphibianFragment
 import com.famco.roomproject.R
 import com.famco.roomproject.adapters.AmphibianAdapter
 import com.famco.roomproject.adapters.IAmphibianClickAdapter

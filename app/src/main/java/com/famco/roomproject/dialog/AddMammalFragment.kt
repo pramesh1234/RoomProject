@@ -1,4 +1,4 @@
-package com.famco.roomproject
+package com.famco.roomproject.dialog
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,12 +7,13 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
+import com.famco.roomproject.R
 import com.famco.roomproject.model.MammalModel
 import com.google.android.material.textfield.TextInputEditText
 
 class AddMammalFragment : DialogFragment() {
 
-lateinit var addMammalViewmodel:AddMammalViewModel
+lateinit var addMammalViewmodel: AddMammalViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
