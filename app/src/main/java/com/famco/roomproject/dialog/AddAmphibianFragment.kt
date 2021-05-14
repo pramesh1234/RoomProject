@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.famco.roomproject.R
 import com.famco.roomproject.model.AmphibianModel
@@ -31,9 +32,13 @@ class AddAmphibianFragment : DialogFragment() {
 
             val animalName = nameEt.text.toString()
             val animalSpecies = speciesEt.text.toString()
+            if(animalName.isNotBlank() and animalSpecies.isNotBlank()){
             val animal = AmphibianModel(animalName, animalSpecies)
             viewModel.insertAmphibian(animal)
-            dialog?.dismiss()
+            dialog?.dismiss()}
+            else{
+                Toast.makeText(context, "Above fields are empty", Toast.LENGTH_SHORT).show()
+            }
         }
         return root
     }

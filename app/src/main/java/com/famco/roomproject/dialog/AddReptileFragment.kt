@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.famco.roomproject.R
@@ -34,9 +35,13 @@ class AddReptileFragment : DialogFragment() {
 
             val animalName = nameEt.text.toString()
             val animalSpecies = speciesEt.text.toString()
-            val animal = ReptileModel(animalName, animalSpecies)
-            addReptileViewModel.insertAnimal(animal)
-            dialog?.dismiss()
+            if (animalName.isNotBlank() and animalSpecies.isNotBlank()) {
+                val animal = ReptileModel(animalName, animalSpecies)
+                addReptileViewModel.insertAnimal(animal)
+                dialog?.dismiss()
+            } else {
+                Toast.makeText(context, "Above fields are empty", Toast.LENGTH_SHORT).show()
+            }
         }
 
         return root

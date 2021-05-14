@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.famco.roomproject.R
@@ -13,7 +14,7 @@ import com.google.android.material.textfield.TextInputEditText
 
 class AddMammalFragment : DialogFragment() {
 
-lateinit var addMammalViewmodel: AddMammalViewModel
+    lateinit var addMammalViewmodel: AddMammalViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -35,13 +36,19 @@ lateinit var addMammalViewmodel: AddMammalViewModel
 
             val mammalName = nameEt.text.toString()
             val mammalSpecies = speciesEt.text.toString()
-            val mammal = MammalModel(mammalName, mammalSpecies)
-            addMammalViewmodel.insertMammal(mammal)
-            dialog?.dismiss()
+            if (mammalName.isNotBlank() and mammalSpecies.isNotBlank()) {
+                val mammal = MammalModel(mammalName, mammalSpecies)
+                addMammalViewmodel.insertMammal(mammal)
+                dialog?.dismiss()
+            }
+            else{
+                Toast.makeText(context, "Above fields are empty", Toast.LENGTH_SHORT).show()
+            }
         }
-return root
+        return root
 
     }
+
     override fun onStart() {
         super.onStart()
         dialog?.window
